@@ -1,0 +1,21 @@
+Part C: Rationale
+
+1) Normalization to 3NF: The database was normalized to Third Normal Form (3NF) to reduce redundancy, improve data integrity, and enhance query performance without sacrificing flexibility.
+
+2) Customer Table: The Customer table was normalized to store individual customer attributes (name, email, address) separately, minimizing duplication. The preferences field was stored as a multi-valued text attribute for flexibility.
+
+3) Orders Table: By linking the Orders table to the Customer table via customer_id, we avoid repeating customer data. Relationships with Payment and Discount tables were established to further normalize the data.
+
+4) Restaurant and MenuItem Tables: Normalization of the Restaurant and MenuItem tables allows independent updates to restaurant information and menu items, avoiding repetitive data entry.
+
+5) Payment Table: The Payment table stores transaction data separately, ensuring efficient management of payment information without redundancy in the Orders table.
+
+6) Delivery Table: The DeliveryPerson table was normalized to store delivery personnel details separately from the Orders table, improving data structure and tracking.
+
+7) Discount Table: The Discount table was normalized to handle discount information independently, preventing the need to repeat discount details for each order.
+
+8) Denormalization Consideration: Some denormalization, like storing customer_name in the Orders table, could improve performance in certain queries by reducing the need for joins. However, it was not applied for simplicity.
+
+9) Phone Number Storage: Phone numbers were stored as strings, not integers, to handle formats like leading zeros and international numbers, ensuring flexibility and avoiding issues with numeric representation.
+
+10) Flexibility vs. Performance: The database prioritizes data consistency and flexibility, though some denormalization could improve performance for specific queries. Normalization was preferred for long-term maintainability.

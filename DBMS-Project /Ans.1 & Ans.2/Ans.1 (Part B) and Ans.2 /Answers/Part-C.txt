@@ -1,0 +1,21 @@
+Part C: Rationale
+
+1) The multi-valued attribute phone_number in the Passenger entity was normalized into a separate table to achieve 1NF, as storing multiple values in a single field violates this rule.
+
+2) Normalization ensures data integrity by preventing duplication and maintaining consistency across related entities, particularly for relationships like Passenger and PhoneNumbers.
+
+3) The Ticket table includes trip_id as a foreign key to associate tickets with trips, supporting 2NF by ensuring that each ticket is uniquely tied to a specific trip.
+
+4) The CheckIn table has a one-to-one relationship with Ticket to enforce that each ticket can only have one check-in entry, maintaining logical consistency.
+
+5) The Review table was normalized to associate reviews directly with passengers, ensuring flexibility for passengers to leave multiple reviews while maintaining 3NF by keeping non-key attributes dependent on the primary key.
+
+6) The Route table was intentionally denormalized by including departure and arrival times to optimize query performance for frequent lookups, such as calculating journey durations or finding trips between cities.
+
+7) Phone numbers were stored as strings to accommodate international formats, including country codes and special characters (+, -), at the cost of slightly increased storage space.
+
+8) The Trip table was normalized to link trips with buses and tickets, ensuring that a trip's attributes, like expected and actual arrival times, remain independent and accurately associated with related entities.
+
+9) Constraints like CHECK on rating in the Review table and NOT NULL on crucial fields ensure data validity and prevent errors during data entry.
+
+10) Certain denormalizations, like including departure_city and destination_city in the Route table, were left to optimize performance for common queries, ensuring faster execution for real-world use cases like trip planning.
