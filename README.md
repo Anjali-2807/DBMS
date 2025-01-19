@@ -9,8 +9,6 @@ This project focuses on designing and implementing robust database solutions usi
 
 ◆ SQL Queries: Execution of queries to create, manage, and manipulate data within the database, including CRUD operations and advanced joins.
 
-◆ Database Design: Comprehensive schema design for real-world applications, ensuring scalability and reliability.
-
 ◆ Database Population: Insertion of meaningful sample data for testing and demonstration purposes.
 
 ◆ Data Extraction from Files: Importing data from external files into MySQL and performing SQL queries to analyze the extracted data.
